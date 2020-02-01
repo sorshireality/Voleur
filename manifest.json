@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Voleur",
+  "version": "1.0.0",
+
+  "description": "Donationalerts helper",
+  "icons": {"128": "img/logo128.png"},
+
+
+  "browser_action": {
+    "default_icon":{
+      "128": "img/logo128.png"
+    },
+    "default_title": "Voleur",
+    "default_popup": "index.html"
+  },
+//  "chrome_url_overrides" : {  "newtab": "tab/release.js"},
+
+  "author": "sorshireality",
+
+  "permissions": ["activeTab"]
+}
