@@ -1,5 +1,5 @@
 <style>
-  @import url('https://fonts.googleapis.com/css?family=Sigmar+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
   *{
   	margin:0px;
   	padding: 0px;
@@ -10,10 +10,11 @@
     border: 1px solid black;
     background-color:#1E1E1E;
   }
-  h2{
+  h1{
     text-align:center;
     color:#D47B2E;
-    font-family: 'Sigmar One', cursive;
+    font-family:'Oswald', sans-serif;
+    margin-top:35px;
   }
   button{
     float:left;
@@ -22,21 +23,22 @@
     margin-left:15px;
     background-color:#D47B2E;
     border:1px solid #D47B2E;
-    font-family: 'Sigmar One', cursive;
-
+    font-family: 'Oswald', sans-serif;
+    margin-top:50px;
   }
   button:hover{
     background-color:#BB6D28;
 
   }
-  h2,button{
-  margin-top:35px;
+  a{
+    text-decoration:none;
+    color:#1E1E1E;
   }
 </style>
 <form action="">
 
-  <h2>Choose mode</h2>
-  <button type="button" name="button_admin">Admin</button>
-  <button type="button" name="button_user">User</button>
+  <h1>Choose mode</h1>
+  <button type="button" name="button_admin"><a href="Voleur/tab/Admin/index.html">Admin</a></button>
+  <button type="button" name="button_user"><a href="Voleur/tab/user/index.html">User</a></button>
 
 </form>
