@@ -15,11 +15,11 @@ class Voleur
         curl_setopt_array($this->curl, [
             CURLOPT_RETURNTRANSFER => 1,
             CURLOPT_URL => self::ENDPOINT,
-            CURLOPT_USERAGENT => 'Authorization: Bearer <token>'
         ]);
     }
 
     public function send_request(){
+        curl_setopt($this->curl, CURLOPT_HTTPHEADER, array('Authorization: Bearer '.self::TOKEN));
         if (!curl_exec($this->curl)) {
             die('Error: "' . curl_error($this->curl) . '" - Code: ' . curl_errno($this->curl));
         } else {
@@ -28,7 +28,9 @@ class Voleur
         return $response;
         }
     }
-    const ENDPOINT = "https://www.donationalerts.com/api/v1";
+    const TOKEN = "JpXlwd0NGIBWeUGuJr1x";
+    const GET_ENDPOINT = "https://www.donationalerts.com/oauth/authorize";
+    const ENDPOINT = "https://www.donationalerts.com/api/v1/alerts/donations";
 
 }
 
