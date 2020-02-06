@@ -1,35 +1,52 @@
 <?php
 
-$url = 'https://www.donationalerts.com/oauth/authorize?
-    response_type=code&
-    client_id=402&
-    redirect_uri=http://voleur.testing.com/tab/requestes.php&
-    scope=';
-echo "<a href='.$url.'>Redirect</a>";
-?>
-
-<?php
-
-if ($_GET){
-    $response = $_GET;
-    print_r($response);
-
-
+function create_request($client_id,$client_secret,$code){
     $ch = curl_init();
-
     curl_setopt($ch, CURLOPT_URL,"https://www.donationalerts.com/oauth/token");
     $post = 'grant_type='.'authorization_code&'.
-    'client_id='.'402&'.'client_secret='.'nUFC2TP8nzx1BDHuV2N7qulZDvoAwz2vSh3fuf3T&'.'redirect_uri='.'http://voleur.testing.com/tab/requestes.php&'.'code='.$response['code'];
+        'client_id='.$client_id.'&client_secret='.$client_secret.'&redirect_uri='.'http://voleur.testing.com/tab/requestes.php&'.'code='.$code;
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
     curl_setopt($ch, CURLOPT_HTTPHEADER, [
         "Content-Type: application/x-www-form-urlencoded",
     ]);
-    $answer = curl_exec($ch);
+    $response = curl_exec($ch);
     curl_close($ch);
-    print_r($answer);
-
+    return json_decode($response,true);
 }
 
+if (isset($_GET['code'])){
+    $token = create_request(402,'nUFC2TP8nzx1BDHuV2N7qulZDvoAwz2vSh3fuf3T',$_GET['code'])['access_token'];
+    get_donats($token);
+}
+function get_access_token(){
+
+}
+function get_accaunt_info($user_token){
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL,"https://www.donationalerts.com/api/v1/user/oauth?scope=oauth-user-show");
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        "Authorization: Bearer ".$user_token,
+    ]);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    print_r($response); exit;
+}
+function get_donats($user_token){
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL,"https://www.donationalerts.com/api/v1/alerts/donations?scope=oauth-donation-index");
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, [
+        "Authorization: Bearer ".$user_token,
+    ]);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    $response = json_decode($response);
+    print_r($response->data[0]->username);
+    exit;
+}
 ?>
