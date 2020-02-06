@@ -1,10 +1,10 @@
 <?php
 
-function create_request($client_id,$client_secret,$code){
+function create_request($client_id,$client_secret,$code,$return_url){
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,"https://www.donationalerts.com/oauth/token");
     $post = 'grant_type='.'authorization_code&'.
-        'client_id='.$client_id.'&client_secret='.$client_secret.'&redirect_uri='.'http://voleur.testing.com/tab/requestes.php&'.'code='.$code;
+        'client_id='.$client_id.'&client_secret='.$client_secret.'&redirect_uri='.$return_url.'&code='.$code;
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
@@ -17,7 +17,8 @@ function create_request($client_id,$client_secret,$code){
 }
 
 if (isset($_GET['code'])){
-    $token = create_request(402,'nUFC2TP8nzx1BDHuV2N7qulZDvoAwz2vSh3fuf3T',$_GET['code'])['access_token'];
+    $return_url = 'http://voleur.kl.com.ua/Voleur/tab/requestes.php';
+    $token = create_request(402,'nUFC2TP8nzx1BDHuV2N7qulZDvoAwz2vSh3fuf3T',$_GET['code'],$return_url)['access_token'];
     get_donats($token);
 }
 function get_access_token(){
