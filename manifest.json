@@ -18,12 +18,7 @@
 
   "author": "sorshireality",
 
-  "permissions": ["activeTab",
-    "https://www.donationalerts.com/",
-    "tabs","identity",
-    "http://voleur.testing.com/",
-  "webRequest",
-  "http://voleur.kl.com.ua/Voleur/"],
+  "permissions": ["activeTab","https://www.donationalerts.com/","tabs","identity","webRequest","https://voleur.000webhostapp.com/*"],
 
   "oauth2": {
     "client_id": "402",
