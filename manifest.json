@@ -6,7 +6,6 @@
   "description": "Donationalerts helper",
   "icons": {"128": "img/logo128.png"},
 
-
   "browser_action": {
     "default_icon":{
       "128": "img/logo128.png"
