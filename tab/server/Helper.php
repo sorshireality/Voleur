@@ -61,7 +61,7 @@ class Helper
                 $temp = self::connect_db('id12607894_admin_plus','RrTyYo2@pL2@k!');
                 self::insert_token($temp,$result,'test_code');
                 self::close_connection($temp);
-                ?><script> setTimeout(function() { window.location = "processor.php?token=<?php echo $result['access_token']; ?>"; }, 500); </script><?php
+                ?><script> window.close();</script><?php
             } else {
                 echo "Error while get aceess code : message -> ";
                 print_r($result);
@@ -72,11 +72,9 @@ class Helper
     public static function gettoken($token) {
         $url = 'https://www.donationalerts.com/api/v1/alerts/donations';
         $response = Helper::get($url,$token);
-        print_r($response);
         if ($response[0] == 200){
-            ?>
-            <script>window.close();</script>
-            <?php
-        }
+            return $response;
+        } else exit;
     }
 }
+?>
