@@ -1,7 +1,7 @@
 $(function() {
 
     $('#button_token').click(function () {
-               var url = 'https://www.donationalerts.com/oauth/authorize?response_type=code&client_id=402&redirect_uri=https://voleur.000webhostapp.com/tab/server/requestes.php&%20%20%20%20scope=oauth-donation-index';
+               var url = 'https://www.donationalerts.com/oauth/authorize?response_type=code&client_id=402&redirect_uri=https://voleur.000webhostapp.com/tab/server/processor.php&%20%20%20%20scope=oauth-donation-index';
                     window.open(url);
 
         var code = $('#input_field').val();

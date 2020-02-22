@@ -3,17 +3,28 @@
 
 class Helper
 {
-    const BASE_SERVER_NAME = 'localhost:3306';
-
     public static function connect_db($base_log, $base_pass)
     {
         $conn = new PDO("mysql:host=localhost;dbname=id12607894_hidden_home", $base_log, $base_pass);
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "Connected successfully";
+        return $conn;
 }
-
-
+    public static function insert_token(PDO $connect, array $values, $user_code){
+        $sql = "INSERT INTO tokens (access_token, expired, refresh_token, user_code) VALUES (?,?,?,?)";
+        $stmt= $connect->prepare($sql);
+        $stmt->execute([$values['access_token'],$values['expires_in'],$values['refresh_token'],$user_code]);
+    }
+    public static function get_token(PDO $connect, $user_code){
+        $stmt = $connect->query("SELECT * FROM tokens WHERE user_code=?");
+        $stmt->execute([$user_code]);
+        $result = $stmt->fetch();
+        return $result;
+    }
+    public static function close_connection(PDO $connect){
+        return $connect = null;
+    }
 
     public static function get($url,$token){
         $ch = curl_init($url);
@@ -47,5 +58,30 @@ class Helper
         array_push($response,$status_code);
         curl_close($ch);
         return $response;
+    }
+    public static function getcode($code){
+            $result = Helper::post('https://www.donationalerts.com/oauth/token',402,'nUFC2TP8nzx1BDHuV2N7qulZDvoAwz2vSh3fuf3T','https://voleur.000webhostapp.com/tab/server/processor.php',$code);
+            if ($result[0] == 200) {
+                $temp = self::connect_db('id12607894_admin_plus','RrTyYo2@pL2@k!');
+                self::insert_token($temp,$result,'test_code');
+                print_r(self::get_token($temp,'test_code')); exit;
+                self::close_connection($temp);
+                ?><script> setTimeout(function() { window.location = "processor.php?token=<?php echo $result['access_token']; ?>"; }, 500); </script><?php
+            } else {
+                echo "Error while get aceess code : message -> ";
+                print_r($result);
+                exit;
+            }
+
+    }
+    public static function gettoken($token) {
+        $url = 'https://www.donationalerts.com/api/v1/alerts/donations';
+        $response = Helper::get($url,$token);
+        print_r($response);
+        if ($response[0] == 200){
+            ?>
+            <script>window.close();</script>
+            <?php
+        }
     }
 }
