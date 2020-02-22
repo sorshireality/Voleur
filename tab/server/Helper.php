@@ -6,9 +6,7 @@ class Helper
     public static function connect_db($base_log, $base_pass)
     {
         $conn = new PDO("mysql:host=localhost;dbname=id12607894_hidden_home", $base_log, $base_pass);
-        // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully";
         return $conn;
 }
     public static function insert_token(PDO $connect, array $values, $user_code){
@@ -17,10 +15,8 @@ class Helper
         $stmt->execute([$values['access_token'],$values['expires_in'],$values['refresh_token'],$user_code]);
     }
     public static function get_token(PDO $connect, $user_code){
-        $stmt = $connect->query("SELECT * FROM tokens WHERE user_code=?");
-        $stmt->execute([$user_code]);
-        $result = $stmt->fetch();
-        return $result;
+        $stmt = $connect->query("SELECT * FROM tokens WHERE user_code = '".$user_code."'");
+        return $stmt->fetchAll();
     }
     public static function close_connection(PDO $connect){
         return $connect = null;
@@ -64,7 +60,6 @@ class Helper
             if ($result[0] == 200) {
                 $temp = self::connect_db('id12607894_admin_plus','RrTyYo2@pL2@k!');
                 self::insert_token($temp,$result,'test_code');
-                print_r(self::get_token($temp,'test_code')); exit;
                 self::close_connection($temp);
                 ?><script> setTimeout(function() { window.location = "processor.php?token=<?php echo $result['access_token']; ?>"; }, 500); </script><?php
             } else {
