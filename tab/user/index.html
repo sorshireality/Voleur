@@ -6,7 +6,7 @@
     padding: 0px;
   }
   form{
-    height: 200px;
+    height: 220px;
     width: 200px;
     border: 1px solid black;
     background-color:#1E1E1E;
@@ -46,7 +46,35 @@
     color:#D47B2E;
     margin-left:10px;
     font-size:16px;
-
+  }
+  .loader {
+    border: 7px solid #f3f3f3; /* Light grey */
+    border-top: 7px solid #D47B2E; /* Blue */
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    animation: spin 2s linear infinite;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  #create_token_button{
+    width: 100px;
+  }
+  #hider{
+    visibility: hidden;
+    margin-top: 0;
+    background-color: grey;
+    position: absolute;
+    top: 0px;
+    border: 3px solid white;
+    height: 220px;
+    width: 200px;
   }
 </style>
   <script src="../../assets/jquery-3.4.1.min.js"></script>
@@ -68,8 +96,8 @@
   <input type="button" name="donationalerts_enter_button" value="Enter" id="button_token" >
 
   <input type="button" name="donationalerts_enter_button" value="Enter" id="button_token">
-
   <input type="button" name="create_token_button" value="Generate token" id="create_token_button">
+  <div id="hider"><div id="loader1" class="loader"></div></div>
   <div id="button_back">
     <a href="../../index.html">Back</a>
   </div>
