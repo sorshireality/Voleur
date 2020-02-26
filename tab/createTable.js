@@ -1,6 +1,7 @@
 $(function() {
-    $('#button_token').click(function () {
+    $('#new_button_token').click(function () {
         localStorage.clear();
+        document.location.href = "../user/index.html";
     });
     // var Array = {
     //     "0": {
