@@ -3,16 +3,17 @@ $(function() {
     $('#button_token').click(function () {
 
         localStorage.setItem('token', field.value);
-
+        let timerId = setTimeout(redirect);
 
 
     });
     function redirect(){
-        var ses = localStorage.getItem("token");
-        if(ses.length > 0){
             document.location.href = "../table/table.html";
-
-        }
     }
-    let timerId = setInterval(() => redirect());
+    
+    if(localStorage.length > 0){
+    let timerId = setTimeout(redirect);
+    }
+
+
 });

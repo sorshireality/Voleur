@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
+*{
+    margin:0px;
+    padding: 0px;
+}
+#index{
+    height: 300px;
+    width: 350px;
+    border: 1px solid black;
+    background-color:#1E1E1E;
+}
+#app_name{
+    text-align:center;
+    color:#D47B2E;
+    font-family:'Oswald', sans-serif;
+    margin-top:15px;
+}
+/*form create uuid*/
+.form{
+    margin-top:15px;
+    margin-left: 10%;
+}
+.button{
+    width:80px;
+    height:25px;
+    font-family:'Oswald', sans-serif;
+    font-size:12px;
+
+}
+.input_field{
+    width:200px;
+    height:20px;
+    font-family:'Oswald', sans-serif;
+    font-size:12px;
+}
+.page_text{
+    color:#D47B2E;
+    font-family:'Oswald', sans-serif;
+    font-size: 16px;
+}
+#enter_uuid_field{
+    width: 283px ;
+}
+#refresh,#remove{
+    display: none;
+    float: left;
+    margin-left: 10%;
+    margin-top:15px;
+}
+#show_button{
+    margin-left: 23%;
+    margin-top:15px;
+}

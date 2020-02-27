@@ -1,50 +1,36 @@
-<style>
-@import url('https://fonts.googleapis.com/css?family=Oswald&display=swap');
-  *{
-  	margin:0px;
-  	padding: 0px;
-  }
-  form{
-    height: 200px;
-    width: 200px;
-    border: 1px solid black;
-    background-color:#1E1E1E;
-  }
-  h1{
-    text-align:center;
-    color:#D47B2E;
-    font-family:'Oswald', sans-serif;
-    margin-top:35px;
-  }
-  button a{
-    line-height: 40px;
-    display:block;
-    height:40px;
-    width:80px;
-  }
-  button{
-    float:left;
-    width:80px;
-    height:40px;
-    margin-left:15px;
-    background-color:#D47B2E;
-    border:1px solid #D47B2E;
-    font-family: 'Oswald', sans-serif;
-    margin-top:50px;
-  }
-  button:hover{
-    background-color:#BB6D28;
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Voleur</title>
+  <link href="styles/style.css" rel="stylesheet">
+</head>
+<body>
 
-  }
-  a{
-    text-decoration:none;
-    color:#1E1E1E;
-  }
-</style>
-<form action="" id="mode_donationalerts_form">
+<div id="index">
 
-  <h1>Choose mode</h1>
-  <button type="button" name="button_admin"><a href="tab/Admin/index.html">Admin</a></button>
-  <button type="button" name="button_user"><a href="tab/user/index.html">User</a></button>
+  <h1 id="app_name">Voleur</h1>
 
-</form>
+  <form name="form_create_uuid" id="uuid_create_form" class="form">
+      <p class="page_text">Generate ID</p>
+      <input type="text" name="create_uuid" id="create_uuid_field" placeholder="Your UUID" class="input_field">
+      <input type="button" name="create_uuid_button" value="Generate ID" id="create_token_button" class="button">
+  </form>
+
+  <form name="form_enter_uuid" id="uuid_enter_form" class="form">
+      <p class="page_text">Enter your ID</p>
+    <input type="text" name="enter_uuid" id="enter_uuid_field" placeholder="Enter your UUID" class="input_field">
+  </form>
+
+  <form id="hidden_form">
+      <p class="page_text" id="refresh">Refresh</p>
+      <p class="page_text" id="remove">Remove</p>
+      <input type="button" name="show_button" value="SHOW" id="show_button" class="button">
+  </form>
+
+</div>
+<script src="assets/jquery-3.4.1.min.js"></script>
+<script src="tab/show.js"></script>
+
+</body>
+</html>
