@@ -11,7 +11,7 @@
 }
 #app_name{
     text-align:center;
-    color:#D47B2E;
+    color:#F6802B;
     font-family:'Oswald', sans-serif;
     margin-top:15px;
 }
@@ -29,17 +29,6 @@
 #create_uuid_form{
     float: left;
 }
-#user_uuid,#admin_uuid{
-
-    color: #1E9A24;
-    font-size: 14px;
-    width: 220px ;
-    height: 20px;
-    font-family:'Oswald', sans-serif;
-    margin-top: 10px;
-
-}
-
 .input_field{
     width:200px;
     height:20px;
@@ -47,20 +36,49 @@
     font-size:12px;
 }
 .page_text{
-    color:#D47B2E;
+    color:#F6802B;
     font-family:'Oswald', sans-serif;
     font-size: 16px;
 }
 #enter_uuid_field{
     width: 283px ;
 }
-#refresh,#remove{
-    display: none;
-    float: left;
-    margin-left: 10%;
+#hidden_block{
+    width: 100%;
+    height: 50px;
+}
+.additional{
+
     margin-top:15px;
+    position:absolute;
+    display: none;
+
+
+
+}
+#remove{
+    margin-top: 30px;
 }
 #show_button{
-    margin-left: 23%;
+    margin-left: 69%;
     margin-top:15px;
+}
+#block_uuid{
+    width: 100%;
+    height: 50px;
+}
+.uuid_code{
+    color:#fff;
+    position:absolute;
+    font-size: 14px;
+    width: 220px ;
+    height: 20px;
+    font-family:'Oswald', sans-serif;
+    margin-top: 10px;
+    display: none;
+
+
+}
+#user_uuid{
+    margin-top: 40px;
 }
