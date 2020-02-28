@@ -25,8 +25,21 @@
     height:25px;
     font-family:'Oswald', sans-serif;
     font-size:12px;
+}
+#create_uuid_form{
+    float: left;
+}
+#user_uuid,#admin_uuid{
+
+    color: #1E9A24;
+    font-size: 14px;
+    width: 220px ;
+    height: 20px;
+    font-family:'Oswald', sans-serif;
+    margin-top: 10px;
 
 }
+
 .input_field{
     width:200px;
     height:20px;

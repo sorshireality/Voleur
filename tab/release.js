@@ -29,6 +29,7 @@ $(function() {
             document.getElementById('hider').style.visibility = 'hidden'; //прячем загрузчик
             console.log(`Loaded: ${xhr.status}`); //статус
             console.log(JSON.parse(xhr.response)); //тело ответа
+
         };
 
         xhr.onerror = function() { // происходит, только когда запрос совсем не получилось выполнить
