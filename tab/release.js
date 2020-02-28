@@ -7,7 +7,6 @@ $(function() {
         xhr.onload = function() {
             console.log('Loaded: '+xhr.status);
             if (xhr.status == 200) {
-                console.log("token created succesfull");
                 console.log(xhr.response);
             } else {
                 console.log("while create token we got a error: "+xhr.status);
