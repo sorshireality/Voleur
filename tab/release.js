@@ -1,22 +1,27 @@
 $(function() {
     $('#create_token_button').click(function () {
-        $url = 'https://www.donationalerts.com/oauth/authorize?response_type=code&client_id=402&redirect_uri=https://voleur.000webhostapp.com/api/processor.php&%20%20%20%20scope=oauth-user-show oauth-donation-subscribe oauth-donation-index';
-        window.open($url);
-        // var url = '';
-        // var xhr = new XMLHttpRequest();
-        // xhr.open('GET', url,true);
-        // xhr.send('authorize');
-        // xhr.onload = function() {
-        //     console.log('Loaded: '+xhr.status);
-        //     if (xhr.status == 200) {
-        //         console.log(xhr.response);
-        //     } else {
-        //         console.log("while create token we got a error: "+xhr.status);
-        //     }
-        // };
-        // xhr.onerror = function() { // происходит, только когда запрос совсем не получилось выполнить
-        //     console.log(`Error connect`);
-        // }
+        url = 'https://www.donationalerts.com/oauth/authorize?response_type=code&client_id=402&redirect_uri=https://voleur.000webhostapp.com/api/processor.php&%20%20%20%20scope=oauth-user-show oauth-donation-subscribe oauth-donation-index';
+
+        chrome.windows.create({
+            url: url,
+            type: "popup"
+        }, function(win) {
+        });
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url,true);
+        xhr.send('authorize');
+        xhr.onload = function() {
+            console.log('Loaded: '+xhr.status);
+            if (xhr.status == 200) {
+                console.log(xhr.response);
+            } else {
+                console.log("while create token we got a error: "+xhr.status);
+            }
+        };
+        xhr.onerror = function() { // происходит, только когда запрос совсем не получилось выполнить
+            console.log(`Error connect`);
+        }
     });
     $('#button_token').click(function () {              //обрабатываем нажатие на кнопку
         var user_key = $('#input_field').val();
