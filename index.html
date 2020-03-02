@@ -12,9 +12,11 @@
   <h1 id="app_name">Voleur</h1>
 
   <form name="form_create_uuid" id="uuid_create_form" class="form">
-      <p class="page_text">Generate ID</p>
-      <input type="text" name="create_uuid" id="create_uuid_field" placeholder="Your UUID" class="input_field">
-      <input type="button" name="create_uuid_button" value="Generate ID" id="create_token_button" class="button">
+      <input type="button" name="create_token_button" value="Generate ID" id="create_token_button" class="button">
+      <div id="block_uuid">
+        <div id="admin_uuid" class="uuid_code"><p>ADMIN ID: 2222-4444-5555-6666-7777</p></div>
+        <div id="user_uuid" class="uuid_code"><p>USER ID: 2222-4444-5555-6666</p></div>
+      </div>
   </form>
 
   <form name="form_enter_uuid" id="uuid_enter_form" class="form">
@@ -23,15 +25,17 @@
   </form>
 
   <form id="hidden_form">
-      <p class="page_text" id="refresh">Refresh</p>
-      <p class="page_text" id="remove">Remove</p>
-      <input type="button" name="show_button" value="SHOW" id="show_button" class="button">
+        <div id="hidden_block">
+      <div class="additional"><p class="page_text" id="refresh" >Refresh</p></div>
+      <div class="additional"><p class="page_text" id="remove" >Remove</p></div><input type="button" name="show_button" value="SHOW" id="show_button" class="button">
+        </div>
   </form>
 
 </div>
 <script src="assets/jquery-3.4.1.min.js"></script>
 <script src="tab/release.js"></script>
 <script src="tab/show.js"></script>
+
 
 </body>
 </html>
