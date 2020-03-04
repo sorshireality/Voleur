@@ -65,19 +65,17 @@
 }
 #block_uuid{
     width: 100%;
-    height: 50px;
+    height: 85px;
 }
 .uuid_code{
-    color:#fff;
+    color: #b3e7dc;
     position:absolute;
-    font-size: 14px;
+    font-size: 9.5px;
     width: 220px ;
     height: 20px;
     font-family:'Oswald', sans-serif;
     margin-top: 10px;
     display: none;
-
-
 }
 #user_uuid{
     margin-top: 40px;

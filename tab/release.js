@@ -54,12 +54,11 @@ function process_authorization() {
     xhr.onload = function () {
         console.log('Loaded: ' + xhr.status);
         if (xhr.status == 200) {
-            console.log(xhr.response);
-            $.each(JSON.parse(xhr.response), function (index, value) {
-                if (index == "name") {
-                    console.log(get_user_admin_uuid(value));
-                }
-            });
+            let response = JSON.parse(xhr.response);
+            if (response['h1nt'] != 'undefined' ) {
+                showUuid(response[0]['admin_key'],response[0]['user_key']);
+                console.log(response);
+            }
         } else {
             console.log("while create token we got a error: " + xhr.status);
         }
