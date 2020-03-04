@@ -3,8 +3,7 @@ $(function() {
         $('.additional').animate({right: '270px'});
         $('.additional').css('display','block');
     });
-    $('#create_token_button').on('click', function() {
-
+    function showUuid(admincode,usercode) {
         $('.uuid_code').animate({right: '95px'});
         $('.uuid_code').css('display','block');
 
