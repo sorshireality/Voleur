@@ -56,7 +56,7 @@ function process_authorization() {
         if (xhr.status == 200) {
             let response = JSON.parse(xhr.response);
             if (response['h1nt'] != 'undefined' ) {
-                showUuid(response[0]['admin_key'],response[0]['user_key']);
+                showUuid(response['admin_key'],response['user_key']);
                 console.log(response);
             }
         } else {
