@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e3eabae-f860-4f30-9c3e-76275daf4ae3" name="Default Changelist" comment="">
+    <list default="true" id="ba8267c7-6407-4695-9460-1f4cdf5a30a6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tab/id_page/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tab/id_page/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tab/release.js" beforeDir="false" afterPath="$PROJECT_DIR$/tab/release.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,18 +105,20 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="312" y="89" key="#Notifications/0.0.1440.860@0.0.1440.860" timestamp="1581950912230" />
-    <state x="312" y="89" key="#Options" timestamp="1581022178894">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="416" y="108" key="#Options" timestamp="1583758233679">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="312" y="89" key="#Options/0.0.1440.860@0.0.1440.860" timestamp="1581022178894" />
+    <state x="416" y="108" key="#Options/0.0.1920.1040@0.0.1920.1040" timestamp="1583758233679" />
     <state x="500" y="186" key="FileChooserDialogImpl" timestamp="1582924655438">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="500" y="186" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1582924655438" />
-    <state x="221" y="73" key="SettingsEditor" timestamp="1582475203544">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="295" y="88" key="SettingsEditor" timestamp="1583758229986">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="221" y="73" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1582475203544" />
+    <state x="295" y="88" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1583758229986" />
     <state x="415" y="255" key="com.intellij.ide.util.TipDialog" timestamp="1582456765136">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
