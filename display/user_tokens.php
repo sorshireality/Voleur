@@ -22,7 +22,7 @@
         #block_uuid{
             position: absolute;
             top: 25%;
-            left: 22.5%;
+            left: 25%;
             font-size: 20q;
             width: 550px;
             height: 450px;
