@@ -26,7 +26,7 @@ $(function() {
         xhr.onload = function() {//получаем ответ от сервера
             document.getElementById('loader').style.display = "none";
             console.log(`Loaded: ${xhr.status}`); //статус
-            response =JSON.parse(xhr.response); //тело ответа
+            response = JSON.parse(xhr.response); //тело ответа
             console.log(response);
             if (response["result"] == 'error') {document.getElementById('enter_uuid_field').style.border = "3px solid red";} else
                  {document.getElementById('enter_uuid_field').style.border = "3px solid lightgreen"; setTimeout(function () {
