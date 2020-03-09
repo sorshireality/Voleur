@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba8267c7-6407-4695-9460-1f4cdf5a30a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tab/id_page/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tab/id_page/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tab/release.js" beforeDir="false" afterPath="$PROJECT_DIR$/tab/release.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,10 +126,11 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="541" y="161" key="ftp.server.browser/0.0.1440.860@0.0.1440.860" timestamp="1581022046901" />
-    <state x="376" y="195" key="run.anything.popup" timestamp="1581950921575">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="501" y="236" key="run.anything.popup" timestamp="1583763706889">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1581950921575" />
+    <state x="501" y="236" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1583763706889" />
     <state x="383" y="181" width="672" height="678" key="search.everywhere.popup" timestamp="1582736456924">
       <screen x="0" y="0" width="1440" height="860" />
     </state>

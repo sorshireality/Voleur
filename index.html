@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <title>Voleur</title>
   <link href="styles/style.css" rel="stylesheet">
+    <style>
+        #loader {
+        border: 4px solid #f3f3f3; /* Light grey */
+        border-top: 4px solid #3498db; /* Blue */
+        border-radius: 50%;
+        width: 14px;
+        height: 15px;
+            display: none;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }</style>
 </head>
 <body>
 
@@ -15,15 +30,8 @@
       <input type="button" name="create_token_button" value="Generate ID" id="create_token_button" class="button">
   </form>
   <form name="form_enter_uuid" id="uuid_enter_form" class="form">
-      <p class="page_text">Enter your ID</p>
-    <input type="text" name="enter_uuid" id="enter_uuid_field" placeholder="Enter your UUID" class="input_field">
-  </form>
-
-  <form id="hidden_form">
-        <div id="hidden_block">
-      <div class="additional"><p class="page_text" id="refresh" >Refresh</p></div>
-      <div class="additional"><p class="page_text" id="remove" >Remove</p></div><input type="button" name="show_button" value="SHOW" id="show_button" class="button">
-        </div>
+      <p class="page_text">Enter your ID <div id="loader"></div></p>
+    <input type="text" name="enter_uuid" id="enter_uuid_field" placeholder="Enter your UUID" class="input_field" style="outline: none">
   </form>
 
 </div>
