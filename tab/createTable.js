@@ -1,38 +1,13 @@
 $(function() {
     $('#new_button_token').click(function () {
         localStorage.clear();
-        document.location.href = "../user/index.html";
+        window.close();
     });
-    // var Array = {
-    //     "0": {
-    //         "id": 254,
-    //         "username": "Pikachu" ,
-    //         "amount":  100,
-    //         "message": "Dota2FOrtnitePubg",
-    //         "time": "13:37 17.02.2021",
-    //         "currency": "RUB"
-    //     },
-    //     "1": {
-    //         "id": 322,
-    //         "username":  "Kolya" ,
-    //         "amount": 300,
-    //         "message": "HelloWORLD SAY HIHelloWORLD SAY HIHelloWORLD SAY HIHelloWORLD SAY HIHelloWORLD SAY HIHelloWORLD SAY HIHelloWORLD SAY HIHelloWORLD SAY HIHelloWORLD SAY HIHelloWORLD SAY HIHelloWORLD SAY HIHelloWORLD SAY HIHelloWORLD SAY HIHelloWORLD SAY HIHelloWORLD SAY HI",
-    //         "time": "13:32 17.02.2020",
-    //         "currency": "EURO"
-    //     },
-    //     "3": {
-    //         "id": 32332,
-    //         "username":  "Koly13123133333a" ,
-    //         "amount": 3030,
-    //         "message": "HelloWORLD SAY HI",
-    //         "time": "13:32 17.02.2020",
-    //         "currency": "RUB"
-    //     },
-    //
-    // };
+
 
     function createTable()
     {
+
         var table = document.getElementsByTagName('table')[0];
 
 
@@ -64,6 +39,8 @@ $(function() {
         }
     }
 
-    let timerId = setInterval(() => createTable(), 2000);
+    // let timerId = setInterval(() => createTable(), 2000);
 
 });
+
+setTimeout(() => req());
