@@ -2,7 +2,12 @@
   "manifest_version": 2,
   "name": "Voleur",
   "version": "1.0.0",
-
+  "background": {
+  "scripts": [
+    "assets/background.js"
+  ],
+    "persistent": false
+},
   "description": "Donationalerts helper",
   "icons": {"128": "img/logo128.png"},
 
@@ -10,20 +15,8 @@
     "default_icon":{
       "128": "img/logo128.png"
     },
-    "default_title": "Voleur",
-    "default_popup": "index.html"
+    "default_title": "Voleur"
   },
-//  "chrome_url_overrides" : {  "newtab": "tab/release.js"},
-
   "author": "sorshireality",
-
-  "permissions": ["activeTab","https://www.donationalerts.com/","tabs","identity","webRequest","https://voleur.000webhostapp.com/*"],
-
-  "oauth2": {
-    "client_id": "402",
-    "scopes": [
-      "oauth-donation-index"
-    ]
-  }
-
+  "permissions": ["activeTab","https://www.donationalerts.com/","tabs","identity","webRequest","https://voleur.000webhostapp.com/*"]
 }

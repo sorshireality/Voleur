@@ -40,14 +40,15 @@ $(function() {
                         console.log('redirect there'); //redirect
                         var field = document.getElementById("enter_uuid_field");
                         localStorage.setItem("id", field.value);
-
-                        var tab_id = chrome.windows.create({
+                        chrome.windows.create({
                             url: "tab/table/table.html",
                             type: "popup"
                         }, function (win) {
-                            auth_id = win['id'];
                         });
-
+                        chrome.browserAction.setPopup({
+                            popup: ""
+                        });
+                        console.log("removed extension");
                     }, 1500);
                 }
             };
