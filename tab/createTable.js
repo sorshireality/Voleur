@@ -1,45 +1,38 @@
+table = $('#don_gandon');
+function displayDonations(item,index){
+    console.log(item,index);
+    table.append("<tr>" +
+        "<td>"+item['username']+"</td>" +
+        "<td>"+item['amount']+"</td>" +
+        "<td>"+item['currency']+"</td>" +
+        "<td>"+item['message']+"</td>" +
+        "<td>"+item['created_at']+"</td>" +
+        "</tr>")
+}
+user_key = localStorage.id;
+    var url = 'https://voleur.000webhostapp.com/api/catch.php?code=' + user_key;
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.send();
+    xhr.onload = function () {//получаем ответ от сервера
+        console.log(`Loaded: ${xhr.status}`); //статус
+        donations = JSON.parse(xhr.response);
+        donations['data'].forEach(displayDonations);
+    };
+
+    xhr.onerror = function () { // происходит, только когда запрос совсем не получилось выполнить
+        console.log(`Error connect`);
+    };
+
+    xhr.onprogress = function (event) { // запускается периодически
+        // event.loaded - количество загруженных байт
+        // event.lengthComputable = равно true, если сервер присылает заголовок Content-Length
+        // event.total - количество байт всего (только если lengthComputable равно true)
+        console.log(`Loaded ${event.loaded} from ${event.total}`);
+    };
 $(function() {
     $('#new_button_token').click(function () {
         localStorage.clear();
         window.close();
     });
-
-
-    function createTable()
-    {
-
-        var table = document.getElementsByTagName('table')[0];
-
-
-        for(let index in Array) {
-            var newRow = table.insertRow(table.rows.length);
-            var cel1 = newRow.insertCell(0);
-            var cel2 = newRow.insertCell(1);
-            var cel3 = newRow.insertCell(2);
-            var cel4 = newRow.insertCell(3);
-            var cel5 = newRow.insertCell(4);
-            for (let elem in Array[index]) {
-
-                if (elem == "username"){
-                    cel1.innerHTML = Array[index][elem];
-                }
-                if (elem == "amount"){
-                    cel2.innerHTML = Array[index][elem];
-                }
-                if (elem == "currency"){
-                    cel3.innerHTML = Array[index][elem];
-                }
-                if (elem == "message"){
-                    cel4.innerHTML = Array[index][elem];
-                }
-                if (elem == "time"){
-                    cel5.innerHTML = Array[index][elem];
-                }
-            }
-        }
-    }
-
-    // let timerId = setInterval(() => createTable(), 2000);
-
 });
-
