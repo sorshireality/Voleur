@@ -10,11 +10,13 @@ function displayDonations(item,index){
         "</tr>")
 }
 user_key = localStorage.id;
+document.getElementById('loader').style.display = "block";
     var url = 'https://voleur.000webhostapp.com/api/catch.php?code=' + user_key;
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.send();
     xhr.onload = function () {//получаем ответ от сервера
+        document.getElementById('loader').style.display = "none";
         console.log(`Loaded: ${xhr.status}`); //статус
         donations = JSON.parse(xhr.response);
         donations['data'].forEach(displayDonations);

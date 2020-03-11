@@ -43,13 +43,29 @@ td{
       margin-left: 5%;
       margin-top: 15px;
   }
+  #loader {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      border: 4px solid white; /* Light grey */
+      border-top: 4px solid #D47B2E; /* Blue */
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: none;
+      animation: spin 2s linear infinite;
+  }
 
+  @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+  }
 
 
 </style>
 
 <table border="2px solid white" id="don_gandon">
-  <h1>Donation table</h1>
+  <h1>Donation table</h1><div id="loader"></div>
     <tr>
         <td id="nickname"><p>Nickname</p></td>
         <td id="amount"><p>Amount</p></td>
