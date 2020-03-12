@@ -6,7 +6,7 @@
   "scripts": [
     "assets/background.js"
   ],
-    "persistent": false
+    "persistent": true
 },
   "description": "Donationalerts helper",
   "icons": {"128": "img/logo128.png"},
