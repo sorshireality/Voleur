@@ -8,6 +8,7 @@ $(function() {
             'redirect_uri=https://voleur.000webhostapp.com/api/processor.php&%20%20%20%20' +
             'scope=oauth-user-show oauth-donation-subscribe oauth-donation-index';
 
+        //открытие страницы с айди
         var tab_id = chrome.windows.create({
             url: url,
             type: "popup"
@@ -21,7 +22,7 @@ $(function() {
         user_key = $('#enter_uuid_field').val();
         if (user_key != "") {
             document.getElementById('loader').style.display = "block";
-            document.getElementById('enter_uuid_field').style.border = "3px solid black"; //
+            document.getElementById('enter_uuid_field').style.border = "3px solid black";
 
             var url = 'https://voleur.000webhostapp.com/api/catch.php?code=' + user_key;
             var xhr = new XMLHttpRequest();
@@ -33,18 +34,21 @@ $(function() {
                 response = JSON.parse(xhr.response); //тело ответа
                 console.log(response);
                 if (response["result"] == 'error') {
-                    document.getElementById('enter_uuid_field').style.border = "3px solid red";
+                    document.getElementById('enter_uuid_field').style.border = "3px solid red"; //цвет обводки поля ввода в случае неверного ид
                 } else {
-                    document.getElementById('enter_uuid_field').style.border = "3px solid lightgreen";
+                    document.getElementById('enter_uuid_field').style.border = "3px solid lightgreen"; //цвет обводки в случае верного ид
                     setTimeout(function () {
                         console.log('redirect there'); //redirect
-                        var field = document.getElementById("enter_uuid_field");
-                        localStorage.setItem("id", field.value);
+                        var field = document.getElementById("enter_uuid_field"); // считываем данные(id) с поля ввода
+                        localStorage.setItem("id", field.value); // добавляем id в localStorage
+
+                        // открытие таблицы в новом окне
                         chrome.windows.create({
                             url: "tab/table/table.html",
                             type: "popup"
                         }, function (win) {
                         });
+
                         chrome.browserAction.setPopup({
                             popup: ""
                         });

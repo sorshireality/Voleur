@@ -1,11 +1,12 @@
 table = $('#don_gandon');
+//вывод донатов в таблицу
 function displayDonations(item,index){
     console.log(item,index);
     table.append("<tr>" +
-        "<td>"+item['username']+"</td>" +
-        "<td>"+item['amount']+"</td>" +
-        "<td>"+item['currency']+"</td>" +
-        "<td>"+item['message']+"</td>" +
+        "<td>"+item['username']+"</p>" +"</td>" +
+        "<td>"+item['amount']+ "</p>"+"</td>" +
+        "<td>"+item['currency']+ "</p>"+"</td>" +
+        "<td>"+"<textarea rows='8' cols='90' disabled readonly >"+item['message']+"</textarea>"+"</td>" +
         "<td>"+item['created_at']+"</td>" +
         "</tr>")
 }
@@ -32,6 +33,8 @@ document.getElementById('loader').style.display = "block";
         // event.total - количество байт всего (только если lengthComputable равно true)
         console.log(`Loaded ${event.loaded} from ${event.total}`);
     };
+
+    //функция, которая при нажатии на кнопку закрывает окно таблицы и очищает localStorage
 $(function() {
     $('#new_button_token').click(function () {
         localStorage.clear();

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
-    <title>Document</title>
+    <title>Voleur</title>
 
 </head>
 <body>
@@ -22,26 +22,42 @@
   h1{
     color:#D47B2E;
     text-align:center;
+    margin-top: 10px;
   }
 
+p{
+    text-align: center;
 
+
+}
  table{
   border-spacing: 0px;
   border-collapse: collapse;
-  margin-left: 2%;
-  margin-right: 2%;
+  margin-left: 5%;
+  margin-top: 15px;
+  width: 90%;
  }
 td{
   text-align:center;
   color:#D47B2E;
-  heigth:70px;
-  line-heigth:70px;
+  height: 50px;
+
 }
+
+textarea{
+    resize: none;
+    border: none;
+    color:#D47B2E;
+    width: 100%;
+
+}
+
   #new_button_token{
       font-size:14px;
       background-color:#FFF;
       margin-left: 5%;
       margin-top: 15px;
+      margin-bottom: 15px;
   }
   #loader {
       position: absolute;
@@ -70,7 +86,7 @@ td{
         <td id="nickname"><p>Nickname</p></td>
         <td id="amount"><p>Amount</p></td>
         <td id="currency"><p>Currency</p></td>
-        <td id="message"><p id="sms">Message</p></td>
+        <td id="message"><p class="sms">Message</p></td>
         <td id="time"><p>Time</p></td>
     </tr>
 </table>
